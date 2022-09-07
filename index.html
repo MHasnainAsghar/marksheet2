@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset style="width: 40%;">
+        <legend>
+            <h3>
+                Form data
+            </h3>
+        </legend>
+        <form action="">
+            <h3>Name</h3>
+            <input type="text" placeholder="Enter yout name" id="txtname">
+            <h3>Father Name</h3>
+            <input type="text" placeholder="Enter yout Father name" id="txtfname">
+            <h3>Student Id</h3>
+            <input type="text" placeholder="Enter yout Rollno" id="txtid">
+            <fieldset>
+                <legend>
+                    <h3>Subjects</h3>
+                </legend>
+                <h3>Maths</h3>
+                <input type="number" placeholder="Enter your amths marks" id="txtmths" required>
+                <h3>Physics</h3>
+                <input type="number" placeholder="Enter your physics marks" id="txtphy">
+                <h3>Maths</h3>
+                <input type="number" placeholder="Enter your urdu marks" id="txturdu">
+
+                <br><br>
+                <input type="submit" onclick="showdata()">
+            </fieldset>
+        </form>
+    </fieldset>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function showdata() {
+        var name = document.getElementById('txtname');
+        var fname = document.getElementById('txtfname');
+        var id    = document.getElementById('txtid');
+        var mths = document.getElementById('txtmths');
+        var phy = document.getElementById('txtphy');
+        var urdu = document.getElementById('txturdu');
+        var total = parseInt(mths.value) + parseInt(phy.value) + parseInt(urdu.value);
+        var pern = (total/300)*100;
+        document.write("<h1>   " + name.value + "  S/o   " + fname.value + "  </h1>")
+        document.write("having Student Id of " + id.value + "")
+        document.write('<table border="2px"> <tr> <th>Maths</th> <th>Physics</th> <th>Urdu</th> </tr> <tr> <td>' + mths.value + '</td> <td>' + phy.value + '</td> <td>' + urdu.value + '</td> </tr> </table>');
+        document.write("<h3> Percenatge is : <i> "+ parseInt(pern)+" </h3></i> ")
+    }
+</script>
